@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/PinFragment"
         android:name="com.kite.joco.webunihffrag.FirstPinFragment"
-        android:label="@string/first_fragment_label"
+        android:label="Pin kód"
         tools:layout="@layout/pinfragment">
 
         <action
@@ -18,11 +18,34 @@
     <fragment
         android:id="@+id/GraphFragment"
         android:name="com.kite.joco.webunihffrag.GraphFragment"
-        android:label="@string/second_fragment_label"
+        android:label="Kiadások"
         tools:layout="@layout/fragment_graph">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/PinFragment" />
+            android:id="@+id/action_graph_to_incomeFragment"
+            app:destination="@id/IncomeFrag" />
+
+        <action
+            android:id="@+id/action_graph_to_expenseFragment"
+            app:destination="@id/ExpenseFrag" />
+
     </fragment>
+
+    <fragment android:id="@+id/IncomeFrag"
+        android:name="com.kite.joco.webunihffrag.IncomeFragment"
+        android:label="Add Income"
+        tools:layout="@layout/fragment_income">
+        <action android:id="@+id/action_income_to_graph"
+            app:destination="@id/GraphFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/ExpenseFrag"
+        android:name="com.kite.joco.webunihffrag.ExpenseFragment"
+        android:label="Add Expense"
+        tools:layout="@layout/fragment_expense">
+        <action android:id="@+id/action_expense_to_graph"
+            app:destination="@id/GraphFragment"/>
+    </fragment>
+
+
 </navigation>
